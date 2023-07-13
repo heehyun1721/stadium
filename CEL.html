@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stamford Bridge</title>
+</head>
+<script>
+    window.addEventListener('load', function() {
+        var allElements = document.getElementsByTagName('*');
+        Array.prototype.forEach.call(allElements, function(el) {
+            var includePath = el.dataset.includePath;
+            if (includePath) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        el.outerHTML = this.responseText;
+                    }
+                };
+                xhttp.open('GET', includePath, true);
+                xhttp.send();
+            }
+        });
+    });
+</script>
+<body>
+    <div id="top" style="width: 100%">
+        <div data-include-path="/top.html"></div>
+        
+    <h1>Stamford Bridge</h1>
+    <img src="https://images2.minutemediacdn.com/image/upload/c_crop,w_7360,h_4140,x_0,y_458/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/images/GettyImages/mmsport/90min_en_international_web/01h3vnk3hm6gpqtgw0rx.jpg" width="100%">
+    <p>Stamford Bridge is a football stadium in Fulham, adjacent to the borough of Chelsea in West London. It is the home of 
+        Premier League club Chelsea. With a capacity of 40,343, it is the ninth largest venue of the 2023-24 Premier League season 
+        and the eleventh largest football stadium in England.<br><br> Opened in 1877, the stadium was used by the London Athletic 
+        Club until 1905, when new owner Gus Mears founded Chelsea Football Club to occupy the ground; Chelsea have played their 
+        home games there ever since. It has undergone major changes over the years, most recently in the 1990s when it was renovated 
+        into a modern, all-seater stadium.<br><br> Stamford Bridge has hosted Charity Shield games. It has also hosted numerous 
+        other sports, such as cricket, rugby union, rugby league, speedway, greyhound racing, baseball and American football. 
+        The stadium's highest official attendance is 82,905, for a league match between Chelsea and Arsenal on 12 October 1935.</p>
+    <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iWqdoqGLByME/v1/-1x-1.jpg" width="100%">
+</body>
+</html>

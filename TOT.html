@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tottenham Hotspur Stadium</title>
+</head>
+<script>
+    window.addEventListener('load', function() {
+        var allElements = document.getElementsByTagName('*');
+        Array.prototype.forEach.call(allElements, function(el) {
+            var includePath = el.dataset.includePath;
+            if (includePath) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        el.outerHTML = this.responseText;
+                    }
+                };
+                xhttp.open('GET', includePath, true);
+                xhttp.send();
+            }
+        });
+    });
+</script>
+<body>
+    <div id="top" style="width: 100%">
+        <div data-include-path="/top.html"></div>
+        
+    <h1>Tottenham Hotspur Stadium</h1>
+    <img src="https://cdne-totv8-prod-westeurope.azureedge.net/media/29247/header-image-resized.jpg" width="100%">
+    <p>The home of Tottenham Hotspur Football Club and the largest club stadium in London with a capacity of 62,850.<br><br>
+        Opened in April, 2019, the stadium is designed to maximise the supporter experience and brings fans closer to the pitch 
+        than at any comparable size stadium in the UK - distances from the front row to the touchline range from just 4.9 metres 
+        to 7.9 metres.<br><br> Our 17,500-seat, single-tier South Stand is the largest in the UK and stands at more than 34 metres 
+        in height - on top of which sits the Club's famous golden cockerel.<br><br> Over 60 food and drink outlets across the stadium 
+        are inspired by London's vibrant street food scene, offering supporters a wide range of choice, including plant-based options 
+        throughout. Highlights include The Market Place in the South Stand, featuring Europe's longest bar - The Goal Line.<br><br>
+        The stadium is multi-use with a unique, dividing retractable grass surface enabling the staging of a variety of major events
+        in addition to Spurs matches, including NFL, boxing, rugby and concerts - creating recurring sources of revenue for the Club 
+        to reinvest in its football activities.<br><br> With the addition of Visitor Attractions, including Stadium Tours and 
+        The Dare Skywalk, and world-class Conference & Events facilities, Tottenham Hotspur Stadium brings nearly two million visitors 
+        to N17 every year and a £344m annual boost to the local economy in one of London's most deprived areas.<br><br>Tottenham Hotspur
+        is Premier League's greenest club and the stadium is powered by 100% renewable energy, with a zero waste-to-landfill policy, 
+        a reusable beer cup scheme and a wide range of public transport options.</p>
+    <img src="https://cdne-totv8-prod-westeurope.azureedge.net/media/34057/the-stadium.jpg" width="100%">
+</body>
+</html>

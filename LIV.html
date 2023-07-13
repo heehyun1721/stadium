@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anfield</title>  
+</head>
+<script>
+    window.addEventListener('load', function() {
+        var allElements = document.getElementsByTagName('*');
+        Array.prototype.forEach.call(allElements, function(el) {
+            var includePath = el.dataset.includePath;
+            if (includePath) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        el.outerHTML = this.responseText;
+                    }
+                };
+                xhttp.open('GET', includePath, true);
+                xhttp.send();
+            }
+        });
+    });
+</script>
+<body>
+    <div id="top" style="width: 100%">
+        <div data-include-path="/top.html"></div>
+        
+    <h1>Anfield</h1>
+    <img src="https://cdn.ca.emap.com/wp-content/uploads/sites/9/2022/12/anfield.jpg" width="100%">
+    <p>Anfield is a football stadium in Anfield, Liverpool, Merseyside, England, which has a seating capacity of 53,394, making it 
+        the seventh largest football stadium in England. It has been the home of Liverpool since their formation in 1892. It was 
+        originally the home of Everton from 1884 to 1891, before they moved to Goodison Park after a dispute with the club president.<br><br>
+        The stadium has four stands: the Spion Kop, the Main Stand, the Sir Kenny Dalglish Stand and the Anfield Road End. The record 
+        attendance of 61,905 was set at a match between Liverpool and Wolverhampton Wanderers in 1952. The ground converted to an 
+        all-seater stadium in 1994 as a result of the Taylor Report, which reduced its capacity.<br><br> Two gates at the stadium are named 
+        after former Liverpool managers: Bill Shankly and Bob Paisley. Both managers have been honoured with statues outside the 
+        stadium: Shankly's unveiled in 1997 by the Kop Stand and Paisley's in 2020 by the Main Stand. The ground is 2 miles (3 km) 
+        from Liverpool Lime Street railway station.<br><br> It was proposed in 2002 for the club to relocate to a new stadium in the 
+        adjacent Stanley Park, but after the acquisition of Liverpool F.C. by Fenway Sports Group in 2010 it was made clear this 
+        would not happen, with the decision being taken to expand Anfield instead. Construction for an extension to the main stand 
+        began on 8 December 2014. This extension, one of the largest all-seater single stands in European football, opened to the 
+        public on 9 September 2016, increasing the stadium capacity to 53,394. The Anfield Road Stand is currently being redeveloped 
+        to bring the stadium capacity to around 61,000. It is due to be completed in time for the 2023-24 season.</p>   
+    <img src="https://i.pinimg.com/originals/5c/4a/74/5c4a74eed66cb28881325e4faf3c9d17.jpg" width="100%"> 
+</body>
+</html>
